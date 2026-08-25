@@ -1,0 +1,11 @@
+{
+  "name": "keith-marketplace",
+  "version": "0.1.0",
+  "description": "keith's agent skills, gated by NVIDIA SkillEvaluator.",
+  "author": { "name": "keith", "url": "https://github.com/You-keitou" },
+  "homepage": "https://github.com/You-keitou/keith-marketplace",
+  "repository": "https://github.com/You-keitou/keith-marketplace",
+  "license": "MIT",
+  "skills": "./skills/",
+  "hooks": {}
+}

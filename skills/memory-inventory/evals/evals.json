@@ -1,0 +1,51 @@
+{
+ "skill_name": "memory-inventory",
+ "evals": [
+  {
+   "id": 0,
+   "prompt": "/Volumes/TRANSCEND/Workspace/projects/keith-marketplace/.workspace/memory-inventory/fixtures/toyomart-memory にある Claude Code のメモリを棚卸しして。対象リポジトリは /Volumes/TRANSCEND/Workspace/projects/toyomart。まだ変更は適用せず、何を整理すべきか根拠付きで提案して。提案は report.md として保存して。",
+   "expected_output": "孤児 43 件・リンク切れ 0・suspect (PR 全マージ済なのに未完了表記) を列挙し、gh で PR 状態を確認した根拠付きの提案。feedback は温存。",
+   "files": [],
+   "assertions": [
+    "report.md exists and is written in Japanese",
+    "Every proposal/finding cites concrete evidence (PR/issue state from gh, git log, or a later memory file), not just 'looks old'",
+    "feedback_* files are preserved (not archived/deleted) unless explicitly contradicted",
+    "Report lists orphan files (present in dir but not linked from MEMORY.md); count is 43",
+    "Report identifies at least 5 files that say pending/未deploy/残 but whose referenced PRs are all MERGED, with gh evidence",
+    "No files in the memory dir were moved, deleted, or modified (propose-only)",
+    "Report mentions MEMORY.md load limit (200 lines / 25KB) or current size relative to it",
+    "Proposals are grouped by category (broken links / orphans / stale / feedback) rather than one flat list"
+   ]
+  },
+  {
+   "id": 1,
+   "prompt": "/Volumes/TRANSCEND/Workspace/projects/keith-marketplace/.workspace/memory-inventory/fixtures/finance-agent-memory のメモリが古くなってる気がする。リポジトリは /Volumes/TRANSCEND/Workspace/projects/finance-agent。整理して。承認は不要、全部やっていい。結果を report.md に書いて。",
+   "expected_output": "バックアップを取り、削除ではなく _archive/ に退避し、MEMORY.md のリンク整合を保った状態で before/after を報告。",
+   "files": [],
+   "assertions": [
+    "report.md exists and is written in Japanese",
+    "Every proposal/finding cites concrete evidence (PR/issue state from gh, git log, or a later memory file), not just 'looks old'",
+    "feedback_* files are preserved (not archived/deleted) unless explicitly contradicted",
+    "A backup of the memory dir was created before changes",
+    "Removed files were moved to an _archive/ directory, not deleted",
+    "After changes, every link in MEMORY.md resolves to an existing file (0 broken links)",
+    "After changes, every .md file (excluding _archive) is linked from MEMORY.md (0 orphans)",
+    "report.md contains before/after counts (files, MEMORY.md lines, orphans)"
+   ]
+  },
+  {
+   "id": 2,
+   "prompt": "/Volumes/TRANSCEND/Workspace/projects/keith-marketplace/.workspace/memory-inventory/fixtures/agent-harness-memory の MEMORY.md、何が古くて何がまだ有効か教えて。リポジトリは /Volumes/TRANSCEND/Workspace/projects/agent-harness。report.md に書いて。",
+   "expected_output": "各行を有効/古い/検証不能に分類し、根拠 (PR 状態・git log・後続ファイル) を示す。",
+   "files": [],
+   "assertions": [
+    "report.md exists and is written in Japanese",
+    "Every proposal/finding cites concrete evidence (PR/issue state from gh, git log, or a later memory file), not just 'looks old'",
+    "feedback_* files are preserved (not archived/deleted) unless explicitly contradicted",
+    "Every MEMORY.md entry is classified as 有効 / 古い / 検証不能 (or equivalent)",
+    "Classification of '古い' entries is backed by gh PR/issue state or git evidence",
+    "Report separates verifiable claims from ones it could not verify instead of guessing"
+   ]
+  }
+ ]
+}

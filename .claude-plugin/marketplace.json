@@ -1,0 +1,17 @@
+{
+  "name": "keith-marketplace",
+  "owner": { "name": "keith", "email": "youkeitou327@gmail.com" },
+  "metadata": {
+    "description": "keith's agent skills. Every skill passes NVIDIA SkillEvaluator Tier 1 before it ships.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "memory-inventory",
+      "description": "Audit Claude Code auto-memory: verify stale claims via gh/git, find orphans and broken links, archive instead of delete.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/memory-inventory"]
+    }
+  ]
+}

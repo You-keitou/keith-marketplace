@@ -1,0 +1,12 @@
+name: skill-gate
+on: [push, pull_request]
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: ./scripts/gate.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: skillevaluator-reports, path: reports/ }
