@@ -9,6 +9,7 @@ Agent skills by keith. Skills follow the [Agent Skills](https://agentskills.io/s
 | Skill | What it does |
 |---|---|
 | [memory-inventory](skills/memory-inventory/SKILL.md) | Audit Claude Code auto-memory: verify stale claims against gh/git/deploy logs, find orphans and broken links, archive instead of delete. |
+| [ja-polish](skills/ja-polish/SKILL.md) | Polish Japanese prose in 4 layers: textlint (表記・書式), rhythm stats, editorial rules (定型句・語順・読点・文体), and a tool-less Haiku reader that flags unclear passages. No hooks; runs only when you ask. |
 
 ## Install
 
@@ -17,6 +18,7 @@ Agent skills by keith. Skills follow the [Agent Skills](https://agentskills.io/s
 ```bash
 npx skills add You-keitou/keith-marketplace                 # pick skills interactively
 npx skills add You-keitou/keith-marketplace --skill memory-inventory
+npx skills add You-keitou/keith-marketplace --skill ja-polish
 npx skills add You-keitou/keith-marketplace --list           # see what's here
 ```
 
@@ -27,6 +29,7 @@ npx skills add You-keitou/keith-marketplace --list           # see what's here
 ```
 /plugin marketplace add You-keitou/keith-marketplace
 /plugin install memory-inventory@keith-marketplace
+/plugin install ja-polish@keith-marketplace
 ```
 
 ### Codex
