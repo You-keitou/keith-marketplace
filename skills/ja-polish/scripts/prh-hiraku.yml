@@ -1,0 +1,33 @@
+# 漢字をひらく辞書（記者ハンドブック・公用文作成の考え方に準拠）。textlint --fix で自動置換される。
+# 「事」「為」「尚」は実質名詞との誤爆があるため前後文字でガードしている。
+version: 1
+rules:
+  - { expected: できる, patterns: [出来る] }
+  - { expected: できます, patterns: [出来ます] }
+  - { expected: できない, patterns: [出来ない] }
+  - { expected: できません, patterns: [出来ません] }
+  - { expected: "$1こと$2", patterns: ["/([ぁ-ん])事([がをにはでも、。])/"] }
+  - { expected: "$1ため$2", patterns: ["/([ぁ-ん])為([にのは、。])/"] }
+  - { expected: さらに, patterns: [更に] }
+  - { expected: すでに, patterns: [既に] }
+  - { expected: すべて, patterns: [全て] }
+  - { expected: まったく, patterns: [全く] }
+  - { expected: あらかじめ, patterns: [予め] }
+  - { expected: おおむね, patterns: [概ね] }
+  - { expected: ほとんど, patterns: [殆ど] }
+  - { expected: さまざま, patterns: [様々] }
+  - { expected: いろいろ, patterns: [色々] }
+  - { expected: ぜひ, patterns: [是非] }
+  - { expected: または, patterns: [又は] }
+  - { expected: および, patterns: [及び] }
+  - { expected: ならびに, patterns: [並びに] }
+  - { expected: もしくは, patterns: [若しくは] }
+  - { expected: あるいは, patterns: [或いは] }
+  - { expected: ただし, patterns: [但し] }
+  - { expected: したがって, patterns: [従って] }
+  - { expected: "なお、", patterns: ["尚、"] }
+  - { expected: いわゆる, patterns: [所謂] }
+  - { expected: まで, patterns: [迄] }
+  - { expected: ちょうど, patterns: [丁度] }
+  - { expected: ください, patterns: [下さい] }
+  - { expected: いただ$1, patterns: ["/頂([くきいけ])/"] }

@@ -1,6 +1,9 @@
 {
   "name": "keith-marketplace",
-  "owner": { "name": "keith", "email": "youkeitou327@gmail.com" },
+  "owner": {
+    "name": "keith",
+    "email": "youkeitou327@gmail.com"
+  },
   "metadata": {
     "description": "keith's agent skills. Every skill passes NVIDIA SkillEvaluator Tier 1 before it ships.",
     "version": "0.1.0"
@@ -11,7 +14,18 @@
       "description": "Audit Claude Code auto-memory: verify stale claims via gh/git, find orphans and broken links, archive instead of delete.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/memory-inventory"]
+      "skills": [
+        "./skills/memory-inventory"
+      ]
+    },
+    {
+      "name": "ja-polish",
+      "description": "Polish Japanese prose: strip LLM boilerplate, tighten redundancy, fix word order and 読点, unify register, run textlint and a tool-less Haiku reader.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/ja-polish"
+      ]
     }
   ]
 }
