@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# ja-polish 機械検査: textlint（表記・書式）+ rhythm.py（リズム・定型句）+ Haiku 読者（構成）。
+# ja-polish 機械検査: textlint（表記・書式）+ rhythm.py（リズム・定型句）+ 一読者（構成）。
 # usage: check.sh <file> [--fix] [--no-reader] [--reader-model <model>]
+#   --reader-model: haiku（既定, claude -p） | sakana-namazu / namazu（Sakana AI Namazu, Responses API）
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"
 CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/ja-polish"
@@ -34,9 +35,19 @@ if [ "$FIX" = 1 ]; then ./node_modules/.bin/textlint -c textlintrc.json --fix "$
 echo; echo "== rhythm（リズム・定型句）"
 python3 "$HERE/rhythm.py" "$FILE"
 
-# 3. Haiku 読者（tool/MCP/設定を全部剥がした素の一読者）
-if [ "$READER" = 1 ] && command -v claude >/dev/null; then
+# 3. 一読者（構成）。既定は Haiku（tool/MCP/設定を全部剥がした素の一読者）、
+#    --reader-model sakana-namazu / namazu なら Sakana AI Namazu を Responses API 経由で使う。
+if [ "$READER" = 1 ]; then
   echo; echo "== reader（$MODEL による一読者の指摘）"
-  claude -p --model "$MODEL" --tools "" --strict-mcp-config --setting-sources "" --no-session-persistence \
-    --system-prompt "$(cat "$HERE/reader-prompt.txt")" < "$FILE" 2>/dev/null || echo "(reader をスキップ: claude -p が失敗)"
+  case "$MODEL" in
+    sakana*|namazu) bash "$HERE/reader-sakana.sh" "$FILE" "$HERE/reader-prompt.txt" || echo "(reader をスキップ: sakana 呼び出しが失敗)" ;;
+    *)
+      if command -v claude >/dev/null; then
+        claude -p --model "$MODEL" --tools "" --strict-mcp-config --setting-sources "" --no-session-persistence \
+          --system-prompt "$(cat "$HERE/reader-prompt.txt")" < "$FILE" 2>/dev/null || echo "(reader をスキップ: claude -p が失敗)"
+      else
+        echo "(reader をスキップ: claude コマンドがありません)"
+      fi
+      ;;
+  esac
 fi
