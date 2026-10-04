@@ -6,6 +6,21 @@
   "homepage": "https://github.com/You-keitou/keith-marketplace",
   "repository": "https://github.com/You-keitou/keith-marketplace",
   "license": "MIT",
+  "keywords": ["agent-skills", "japanese", "proofreading", "rss", "digest", "memory"],
   "skills": "./skills/",
-  "hooks": {}
+  "hooks": {},
+  "interface": {
+    "displayName": "keith's agent skills",
+    "shortDescription": "Memory audit, Japanese prose polish, and daily AI intel skills.",
+    "longDescription": "Three agent skills: memory-inventory audits Claude Code auto-memory against gh/git/deploy state; ja-polish polishes Japanese prose in four layers (textlint, rhythm stats, editorial rules, a tool-less reader pass); daily-intel collects AI blog and arXiv feeds into actionable notes and publishes digest/quiz pages to Cloudflare Pages.",
+    "developerName": "keith",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteURL": "https://github.com/You-keitou/keith-marketplace",
+    "defaultPrompt": [
+      "Audit my Claude Code memory",
+      "Polish this Japanese text",
+      "Collect today's AI intel"
+    ]
+  }
 }

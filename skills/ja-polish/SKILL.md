@@ -2,9 +2,9 @@
 name: ja-polish
 license: MIT
 description: "Polish Japanese prose so it reads as if a good native editor rewrote it: strip LLM boilerplate (はい、もちろんです / 以下の通りです / いかがでしょうか), tighten redundancy (することができます, を行う), fix word order and 読点, unify ですます/である, open kanji (出来る→できる), vary sentence endings, and run a tool-less Haiku reader to flag unclear passages. Use whenever the user asks to 校正, 推敲, 添削, 直す, 自然にする, 綺麗にする, or proofread / polish / humanize Japanese text — an article, README, PR description, commit message, email, chat reply, or Claude's own previous answer — or says the Japanese sounds AIっぽい, 翻訳調, 硬い, or 冗長. Not for translation, not for English text, not for changing the meaning or adding content."
+version: "0.1.0"
 metadata:
   author: "keith <youkeitou327@gmail.com>"
-  version: "0.1.0"
   tags: "japanese, writing, proofreading, editing, textlint"
 ---
 

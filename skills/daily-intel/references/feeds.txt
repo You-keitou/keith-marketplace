@@ -1,6 +1,8 @@
 # daily-intel feed list — one URL per line, '#' comments allowed.
-# 404/403が出たら削除or差し替え。RSSを持たないソース(Anthropic/Mistral/Meta)は
-# SKILL.md の手順どおり agent が WebSearch で補完する。
+# 404/403が出たら削除or差し替え。RSSが無い/使えないソースの補完方法は SKILL.md の手順どおり:
+#   Anthropic -> https://www.anthropic.com/news を直接 fetch（HTMLだが一覧+日付が取れる）
+#   OpenAI    -> RSSは生きているが記事ページは403。詳細だけ二次報道を web search
+#   Mistral / Meta AI -> web search
 
 # --- 企業ブログ ---
 https://openai.com/news/rss.xml
@@ -8,7 +10,7 @@ https://deepmind.google/blog/rss.xml
 https://research.google/blog/rss/
 https://blog.google/technology/ai/rss/
 https://aws.amazon.com/blogs/machine-learning/feed/
-https://www.microsoft.com/en-us/research/feed/   # curlだと403。失敗リストに出たらWebSearch補完
+https://www.microsoft.com/en-us/research/feed/   # curlだと403。失敗リストに出たらweb search補完
 https://blog.cloudflare.com/rss/
 https://huggingface.co/blog/feed.xml
 
