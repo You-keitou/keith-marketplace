@@ -1,0 +1,26 @@
+# daily-intel feed list — one URL per line, '#' comments allowed.
+# 404/403が出たら削除or差し替え。RSSを持たないソース(Anthropic/Mistral/Meta)は
+# SKILL.md の手順どおり agent が WebSearch で補完する。
+
+# --- 企業ブログ ---
+https://openai.com/news/rss.xml
+https://deepmind.google/blog/rss.xml
+https://research.google/blog/rss/
+https://blog.google/technology/ai/rss/
+https://aws.amazon.com/blogs/machine-learning/feed/
+https://www.microsoft.com/en-us/research/feed/   # curlだと403。失敗リストに出たらWebSearch補完
+https://blog.cloudflare.com/rss/
+https://huggingface.co/blog/feed.xml
+
+# --- DeepSeek / Moonshot はブログが弱いので GitHub Releases で代替 ---
+https://github.com/deepseek-ai/DeepSeek-V3/releases.atom
+https://github.com/MoonshotAI/Kimi-K2/releases.atom
+
+# --- 個人(実践情報密度が高い) ---
+https://simonwillison.net/atom/everything/
+https://github.blog/ai-and-ml/feed/
+
+# --- 論文 (arXiv RSS: 当日の新着一覧) ---
+https://rss.arxiv.org/rss/cs.AI
+https://rss.arxiv.org/rss/cs.CL
+https://rss.arxiv.org/rss/cs.LG

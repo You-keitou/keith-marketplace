@@ -26,6 +26,15 @@
       "skills": [
         "./skills/ja-polish"
       ]
+    },
+    {
+      "name": "daily-intel",
+      "description": "Daily AI intel: scan company blogs + arXiv via RSS and package the best items into actionable learning notes; generate quiz HTML deployed to Cloudflare Pages; scan Japanese gig sites for 生成AI × 週10h side-work.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/daily-intel"
+      ]
     }
   ]
 }

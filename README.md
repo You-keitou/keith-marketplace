@@ -10,6 +10,7 @@ Agent skills by keith. Skills follow the [Agent Skills](https://agentskills.io/s
 |---|---|
 | [memory-inventory](skills/memory-inventory/SKILL.md) | Audit Claude Code auto-memory: verify stale claims against gh/git/deploy logs, find orphans and broken links, archive instead of delete. |
 | [ja-polish](skills/ja-polish/SKILL.md) | Polish Japanese prose in 4 layers: textlint (表記・書式), rhythm stats, editorial rules (定型句・語順・読点・文体), and a tool-less Haiku reader that flags unclear passages. No hooks; runs only when you ask. |
+| [daily-intel](skills/daily-intel/SKILL.md) | Daily AI intel collection: RSS + arXiv scanning with stdlib-only dedup (`fetch.py`), LLM packaging into actionable notes, quiz HTML deployed to Cloudflare Pages, and Japanese freelance gig scans (生成AI × 週10h × リモート). |
 
 ## Install
 
