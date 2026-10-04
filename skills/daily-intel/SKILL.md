@@ -2,9 +2,9 @@
 name: daily-intel
 license: MIT
 description: "Daily automated intel collection: scan AI-company blogs (OpenAI, DeepMind, Google Research, AWS, Cloudflare, DeepSeek, Moonshot…), engineering blogs and arXiv via RSS, then package the best items into actionable learning notes (summary, why-it-matters, one hands-on exercise each). Also generates digest + quiz HTML pairs published to Cloudflare Pages, and scans Japanese freelance gig sites (オシジョブ, クラウドワークス, ランサーズ, Findy Freelance…) for 生成AI × 週10時間 × リモート side-work. Use when the user says 情報収集, daily digest, 今日のAIニュース, intel, quizを作って, 副業案件を探して, or schedules a recurring run via claude -p / codex."
+version: "0.2.0"
 metadata:
   author: "keith <youkeitou327@gmail.com>"
-  version: "0.2.0"
   tags: "rss, arxiv, digest, quiz, cloudflare-pages, freelance, automation"
 ---
 

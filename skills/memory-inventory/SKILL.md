@@ -2,9 +2,9 @@
 name: memory-inventory
 license: MIT
 description: "Audit and clean up Claude Code auto-memory (~/.claude/projects/*/memory/). Verifies stale claims like 'not deployed yet' or 'remaining: X' against gh, git and deploy logs, finds orphan files missing from MEMORY.md and broken links, and archives instead of deleting. Use whenever the user wants to inventory, audit, prune, consolidate or compress their Claude memory or MEMORY.md, says memory 'is lying' or 'feels stale', or complains MEMORY.md is too long or truncated. Not for editing CLAUDE.md, project docs, or the memory of other tools."
+version: "0.1.0"
 metadata:
   author: "keith <youkeitou327@gmail.com>"
-  version: "0.1.0"
   tags: "claude-code, memory, maintenance, audit"
 ---
 
